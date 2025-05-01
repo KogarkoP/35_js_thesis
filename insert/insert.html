@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./insert.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <ul class="navigation">
+        <li><a href="../index.html">All products</a></li>
+        <li><a href="./insert.html">Insert product</a></li>
+      </ul>
+    </header>
+    <main>
+      <div id="page_wrapper" class="page_wrapper">
+        <h1>Insert product to the catalog</h1>
+        <div id="insert_form" class="form">
+          <div class="form_row">
+            <label for="product_name">Product name</label>
+            <input id="product_name" type="text" placeholder="Product name" />
+          </div>
+          <div class="form_row">
+            <label for="product_price">Product price</label>
+            <input id="product_price" type="text" placeholder="Product price" />
+          </div>
+          <div class="form_row">
+            <label for="img_url">Image url</label>
+            <input id="img_url" type="text" placeholder="Image url" />
+          </div>
+          <div class="form_row">
+            <label for="product_locations">Choose a location</label>
+            <select name="locations" id="product_locations">
+              <option value="" disabled selected>Select an option</option>
+              <option value="Vilnius">Vilnius</option>
+              <option value="Kaunas">Kaunas</option>
+              <option value="Klaipėda">Klaipėda</option>
+              <option value="Šiauliai">Šiauliai</option>
+            </select>
+          </div>
+          <div class="form_row">
+            <label for="product_description">Product description</label>
+            <textarea
+              id="product_description"
+              placeholder="Description..."
+            ></textarea>
+          </div>
+          <h3 id="message" class="message"></h3>
+          <button id="insert_product">Insert product</button>
+          <a class="catalog_btn" href="../index.html">Back to the catalog</a>
+        </div>
+      </div>
+    </main>
+    <script src="./insert.js"></script>
+  </body>
+</html>
