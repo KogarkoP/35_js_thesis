@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+}
+
+body {
+  min-width: 370px;
+}
+
+* {
+  font-family: "Roboto";
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 35px;
+  letter-spacing: 1.5px;
+  padding: 10px;
+}
+
+button,
+.catalog_btn {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0.75rem;
+  letter-spacing: 0.75px;
+  border-radius: 5px;
+  border: 1px solid;
+  transition: 0.3s ease-in-out;
+  text-align: center;
+  background-color: #f8f8f8;
+  font-weight: 500;
+}
+
+.catalog_btn:hover,
+button:hover {
+  scale: 1.01;
+  background-color: #fff;
+  box-shadow: 5px 5px 10px 5px rgba(167, 167, 167, 0.75);
+  -webkit-box-shadow: 5px 5px 10px 5px rgba(167, 167, 167, 0.75);
+  -moz-box-shadow: 5px 5px 10px 5px rgba(167, 167, 167, 0.75);
+}
+
+.page_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navigation {
+  display: flex;
+  justify-content: end;
+  list-style: none;
+  gap: 2rem;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.navigation li a {
+  transition: 0.3s ease-in-out;
+}
+
+.navigation li a:hover {
+  color: #007aff;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #008000;
+  font-weight: 500;
+}
+
+.message.success::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f058";
+  font-size: 27px;
+  margin-right: 10px;
+}
