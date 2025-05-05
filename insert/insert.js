@@ -1,3 +1,6 @@
+import { insertProduct } from "../utils/fetch.js";
+import { formValidation } from "../utils/validation.js";
+
 const productName = document.getElementById("product_name");
 const productPrice = document.getElementById("product_price");
 const productImage = document.getElementById("img_url");
@@ -5,19 +8,6 @@ const productLocation = document.getElementById("product_locations");
 const productDescription = document.getElementById("product_description");
 const insertButton = document.getElementById("insert_product");
 const message = document.getElementById("message");
-
-const insertProduct = async (data) => {
-  const response = await fetch(
-    "https://6812782c129f6313e20eb0a7.mockapi.io/products",
-    {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: { "content-type": "application/json" },
-    }
-  );
-  const products = await response.json();
-  return products;
-};
 
 insertButton.addEventListener("click", async () => {
   const price = Number(productPrice.value.replace(",", "."));
@@ -30,30 +20,9 @@ insertButton.addEventListener("click", async () => {
     location: productLocation.value,
   };
 
-  if (
-    !data.name.trim() ||
-    !data.description.trim() ||
-    productPrice.value.trim() === "" ||
-    !data.imgUrl.trim() ||
-    !data.location
-  ) {
-    alert("Please fill in all fields");
-    return;
-  }
+  const isValidationError = formValidation(data);
 
-  if (isNaN(data.price)) {
-    alert("Product price should be a number");
-    return;
-  } else if (data.price === 0) {
-    alert("Product price can't be equal 0");
-    return;
-  }
-
-  const imgUrlRegex =
-    /^https?:\/\/.*\.(jpg|jpeg|png|gif|webp|bmp|svg)(\?.*)?$/i;
-
-  if (!imgUrlRegex.test(data.imgUrl)) {
-    alert("Please insert correct image url");
+  if (isValidationError) {
     return;
   }
 

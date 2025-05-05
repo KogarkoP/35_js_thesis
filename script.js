@@ -1,10 +1,4 @@
-const fetchProducts = async () => {
-  const response = await fetch(
-    "https://6812782c129f6313e20eb0a7.mockapi.io/products"
-  );
-  const data = response.json();
-  return data;
-};
+import { fetchProducts } from "./utils/fetch.js";
 
 const buildCards = (products) => {
   const productWrapper = document.getElementById("product_wrapper");
