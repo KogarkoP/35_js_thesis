@@ -135,3 +135,9 @@ button:hover {
 .product_description {
   text-align: justify;
 }
+
+@media (max-width: 767px) {
+  .product_wrapper {
+    grid-template-columns: 1fr;
+  }
+}
