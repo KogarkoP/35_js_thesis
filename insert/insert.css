@@ -94,6 +94,7 @@ button:hover {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 1rem;
+  margin-bottom: 2rem;
 }
 
 .navigation {
@@ -142,4 +143,10 @@ button:hover {
   content: "\f058";
   font-size: 27px;
   margin-right: 10px;
+}
+
+@media (max-width: 767px) {
+  .navigation {
+    justify-content: center;
+  }
 }
